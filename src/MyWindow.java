@@ -14,7 +14,7 @@ public class MyWindow extends JFrame
 
     MyWindow(){
         super.setTitle("My Clock");
-        super.setSize(400,400);
+        super.setSize(600,400);
         super.setLocation(300,50);
 
         this.creatGUI();
@@ -39,13 +39,11 @@ public class MyWindow extends JFrame
     }
 
     public void startClock(){
-        Timer timer=new Timer(1000, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String dateTime=new Date().toString();
+        Timer timer;
+        timer = new Timer(1000, e -> {
+            String dateTime=new Date().toString();
 
-                clockLable.setText(dateTime);
-            }
+            clockLable.setText(dateTime);
         });
         timer.start();
 
